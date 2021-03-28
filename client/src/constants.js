@@ -1,7 +1,7 @@
 export const constants = {
     events: {
         app: {
-          MESSAGE_SENT: 'message:SENT',
+          MESSAGE_SENT: 'message:sent',
           MESSAGE_RECEIVED: 'message:received',
           ACTIVITYLOG_UPDATED: 'activityLog:updated',
           STATUS_UPDATED: 'status:updated'  ,
@@ -9,7 +9,8 @@ export const constants = {
         },
 
         socket: {
-
+          JOIN_ROOM: 'joinRoom',
+          MESSAGE: 'message'
         }
     }
 }
