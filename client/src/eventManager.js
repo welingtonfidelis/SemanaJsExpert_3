@@ -33,6 +33,20 @@ export default class EventMager {
         this.#updateActivityLogComponent(`${user.userName} joined!`);
     }
 
+    disconnectUser(message) {
+        const { userName, id } = message;
+        this.#allUsers.delete(id);
+        this.#updateActivityLogComponent(`${userName} left!`);
+        this.#updateUsersComponent();
+    }
+
+    message(message) {
+        this.componentEmitter.emit(
+            constants.events.app.MESSAGE_RECEIVED,
+            message
+        );
+    }
+
     #updateActivityLogComponent(message) {
         this.componentEmitter.emit(
             constants.events.app.ACTIVITYLOG_UPDATED,
