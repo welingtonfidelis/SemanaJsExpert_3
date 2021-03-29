@@ -27,3 +27,4 @@ eventMager.joinRoonAndWaitForMessages(data);
 const terminalController = new TerminalController();
 
 await terminalController.initializeTable(componentEmitter);
+ 
